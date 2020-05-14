@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	void	ft_else(char *tmp, char *tmp2, size_t n)
+static	void	ft_else(unsigned char *tmp, unsigned char *tmp2, size_t n)
 {
 	while (n > 0)
 	{
@@ -21,7 +21,7 @@ static	void	ft_else(char *tmp, char *tmp2, size_t n)
 	}
 }
 
-void	*ft_memmove(void *destination, const void *source, size_t n)
+void			*ft_memmove(void *destination, const void *source, size_t n)
 {
 	unsigned char		*tmp;
 	unsigned char		*tmp2;

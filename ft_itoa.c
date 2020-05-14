@@ -6,7 +6,7 @@
 /*   By: wsallei <wsallei@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 19:36:17 by wsallei           #+#    #+#             */
-/*   Updated: 2020/05/04 23:50:14 by wsallei          ###   ########.fr       */
+/*   Updated: 2020/05/10 22:04:39 by wsallei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int		ft_sizenum(int n)
 	cnum = 0;
 	num = n;
 	if (n == 0)
-    	return (1);
+		return (1);
 	if (num < 0)
 	{
 		num *= -1;

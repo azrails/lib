@@ -14,7 +14,7 @@
 
 static	char		**ft_delmem(char **res, size_t f)
 {
-	while(f >= 0)
+	while (f)
 	{
 		free(res[f]);
 		f--;
@@ -26,7 +26,7 @@ static	char		**ft_delmem(char **res, size_t f)
 static	int			ft_sizewrd(char *s, char c, int i)
 {
 	int count;
-	
+
 	count = 0;
 	while (s[i] != '\0' && s[i] != c)
 	{
@@ -36,7 +36,7 @@ static	int			ft_sizewrd(char *s, char c, int i)
 	return (count);
 }
 
-static	int			ft_cword(char *s, char c)//vrode ++
+static	int			ft_cword(char *s, char c)
 {
 	size_t	i;
 	int		count;
@@ -44,6 +44,7 @@ static	int			ft_cword(char *s, char c)//vrode ++
 
 	count = 0;
 	i = 0;
+	wrd = 0;
 	while (s[i] != 0)
 	{
 		if (s[i] == c)
@@ -70,18 +71,14 @@ static	char		**ft_crtwrd(char **res, char *s, char c)
 	while (s[i] != '\0')
 	{
 		g = 0;
-		while (s[i] == c && s[i])
+		while (s[i] == c)
 			i++;
 		if (s[i] == '\0')
-			break;
+			break ;
 		if (!(res[f] = malloc(sizeof(**res) * ft_sizewrd(s, c, i) + 1)))
 			return (ft_delmem(res, f));
 		while (s[i] != '\0' && s[i] != c)
-		{
-			res[f][g] = s[i];
-			g++;
-			i++;
-		}
+			res[f][g++] = s[i++];
 		res[f][g] = '\0';
 		f++;
 	}
@@ -93,12 +90,12 @@ char				**ft_split(char const *s, char c)
 {
 	int		f;
 	char	**res;
+
 	if (!s)
-		return(NULL);
+		return (NULL);
 	f = ft_cword((char *)s, c);
-	if (!(res = malloc(sizeof(**res) * (f + 1))))
+	if (!(res = malloc(sizeof(res) * (f + 1))))
 		return (NULL);
 	res = ft_crtwrd(res, (char *)s, c);
 	return (res);
 }
-

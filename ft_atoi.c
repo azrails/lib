@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int		ft_over(char *s1, int pos_neg)
+static	int		ft_over(char *s1, int pos_neg)
 {
 	int over;
 	int chek;
@@ -36,13 +36,11 @@ static int		ft_over(char *s1, int pos_neg)
 	return (over);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
-	int				i;
 	long long int	res;
 	int				pos_neg;
 
-	i = 0;
 	res = 0;
 	pos_neg = 1;
 	while (*str == '\t' || *str == ' ' || *str == '\n' || *str == '\r'

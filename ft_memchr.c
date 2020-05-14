@@ -15,24 +15,15 @@
 void	*ft_memchr(const void *arr, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	c1;
-	unsigned char	*arr1;
 	unsigned char	*arr2;
 
-	arr2 = (char *)arr;
-	c1 = c;
+	arr2 = (unsigned char *)arr;
 	i = 0;
-	if (*arr2)
+	while (i < n)
 	{
-		while (i < n)
-		{
-			if (arr2[i] == c1)
-			{
-				arr1 = &arr2[i];
-				return (arr1);
-			}
-			i++;
-		}
+		if (arr2[i] == (unsigned char)c)
+			return ((void *)&arr2[i]);
+		i++;
 	}
 	return (NULL);
 }
